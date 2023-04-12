@@ -1,16 +1,20 @@
 package com.example.driveradd;
 
-public class Driver {
+import java.io.Serializable;
+
+public class Driver implements Serializable {
     private String name;
-    private int id;
+    private String  id;
     private int age;
     private double salary;
+    private String route;
 
-    public Driver(String name, int id, int age, double salary) {
+    public Driver(String name, String id, int age, double salary, String route) {
         this.name = name;
         this.id = id;
         this.age = age;
         this.salary = salary;
+        this.route = route;
     }
 
     public String getName() {
@@ -21,11 +25,11 @@ public class Driver {
         this.name = name;
     }
 
-    public int getId() {
+    public String getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(String id) {
         this.id = id;
     }
 
@@ -45,10 +49,16 @@ public class Driver {
         this.salary = salary;
     }
 
+    public String getRoute() {
+        return route;
+    }
+
+    public void setRoute(String route) {
+        this.route = route;
+    }
+
     @Override
     public String toString() {
-        return String.format("Name: %s, ID: %d, Age: %d, Salary: %.2f", name, id, age, salary);
-
+        return name + " (ID: " + id + ")";
     }
 }
-
